@@ -9,9 +9,13 @@ handy to peruse a directory tree though, especially when someone is trying to
 hide something from you.
 
   The main distribution site for tree is here:
+  http://oldmanprogrammer.net/source.php?dir=projects/tree
 
-  http://mama.indstate.edu/users/ice/tree/
-  ftp://mama.indstate.edu/linux/tree/
+  Backup GIT sites are:
+  https://gitlab.com/OldManProgrammer/unix-tree
+  https://github.com/Old-Man-Programmer/tree
+
+  Current e-mail address to reach me at: steve.baker.llc@gmail.com
 
   If you don't like the way it looks let me know how you think it should be
 formatted. Feel free to suggest modifications and additions.
@@ -181,9 +185,183 @@ Stephan Gabert
   - Found a bug where the wrong inode (and device) information would be printed
     for symbolic links.
 
+Nick Craig-Wood
+  - Fixed issue where mbstowcs() fails to null terminate the string due to
+    improper UTF-8 encoding leading to garbage being printed.
 
+Mantas Mikulėnas
+  - Fixed issue with malformed multibyte string handling.
+
+Wagner Camarao
+  - Pointed out that JSON size output ignored -h/--si flags
+
+John Lane, Tad, others
+  - Fixed JSON output hanging commas
+
+Jacob Wahlgren
+  - Improved command line switch error reporting.
+  - Symbolic links not displayed if a -P pattern is active
+  - Missing argument error reporting fixes on long format switches.
+
+Shawn Mehan
+  - Update BINDIR in Makefile for MacOS X -- It is not allowed to install
+    programs to /usr/bin on MacOS X any longer due to System Integrity
+    Protection (SIP)
+
+Kirill Kolyshkin
+  - Some man page fixes and cleanups
+
+Alyssa Ross
+  - Suggested adding support for BSD's CLICOLOR and CLICOLOR_FORCE environment
+    variables.
+
+Tomáš Beránek
+  - Make sure we always use xmalloc / xrealloc
+
+Sergei Maximov
+  - Make XML/HTML/JSON output mutually exclusive.
+
+Jonas Stein
+  - Deprecate using local -DLINUX / -DCYGWIN and use the OS provided defines
+
+John A. Fedoruk
+  - Suggested --filesfirst option.
+
+Michael Osipov
+ - Optimized makefile, HP/UX support.
+
+Richard Mitchell
+  - Suggested --metafirst option
+
+Paul Seyfert
+  - Honor -n (no color) even if the CLICOLOR_FORCE environment variable is set
+
+Filips Romāns via Debian
+  - Make tree colorization use reset (rs code in dir_colors,) not normal color
+    when resetting attributes.
+
+Chentao Credungtao via Debian
+  - Properly sort --fromfile input
+
+Jake Zimmerman (and others)
+  - Suggest support for .gitignore files (--gitignore option)
+
+Eric Pruitt
+  - Always HTML escape filenames in HTML output even when -C is used.
+
+Michiel Beijen (and others)
+  - Suggest Support multiple -I and -P instances.
+  - Suggest that / match directories in patterns (also Taylor Faubion)
+  - Suggested to update MANPATH for OS X
+
+Michal Vasilek
+  - Various Makefile fixes
+
+Josey Smith
+  - Reported an error with * in the patchmatch code where *foo*bar would match
+    *foo alone.
+
+Maxim Cournoyer
+ - Reported HTML url output issue w/ 2.0.0-2.0.1
+
+Ben Brown
+ - Updates to the Makefile
+ - Reported use after free error
+
+Erik Skultety
+ - Reported same use after error
+
+Saniya Maheshwari / Mig-hub ? / Carlos Pinto
+ - Reported various issues with --gitignore
+
+Piotr Andruszkow
+ - Suggested adding support for --info and --gitignore for the --fromfile
+   option.
+
+Sebastian Rose
+ - Another attempt at fixing extraneous /'s in HTML URLs/output.
+
+Dave Rice
+ - Fixed XML output
+
+Timm Fitschen
+ - Suggest adding support for the NO_COLOR environment variable.
+
+Chentao Credungtao
+ - Suggested supporting symbolic links in --fromfile (--fflinks option)
+
+Sith Wijesinghe and Matthew Sessions
+ - Remove many C90 isms to make compiling with C90 compilers easier.
+
+simonpmind (gitlab)
+ - Reported issue where following links while doing JSON output would lead to
+   incorrect JSON output.
+ - Suggested suppressing 'recursive, not followed' when using -L, fixing JSON
+   error.
+
+German Lashevich
+ - Reported an issue where .info patterns relative to the .info file that did
+   not use a wildcard for matching the prefix were not matching files properly.
+
+Javier Jaramago Fernández
+ - Reported a buffer overflow in listdir() when file names are allowed to be
+   longer than 256 characters (like when using fromfile.)
+
+6ramr (gitlab)
+ - Reported issue with following symbolic links when a full tree was gathered.
+
+Clinton
+ - Reported issue where --gitignore does not think a pattern with a singular
+   terminal '/' (indicating it matches only directories,) is a relative path.
+
+jack6th (gitlab)
+ - Don't prematurely sort files/directories with --from*file.
+
+Hanqin Guan (The OSLab of Peking University):
+ - Fuzzing testing that identified several problems in --fromfile and
+   --fromtabfile processing.
+ - -U should disable --dirsfirst / --filesfirst sorting.
+ - Make sure gittrim() function can handle a null string.
+
+Trevor Gross
+ - Suggested adding support for immediate values to -L with no spacing.
+
+Christoph Anton Mitterer
+ - Suggested option negation, which led to --opt-toggle.
+
+Nicolai Dagestad
+ - Suggested --hyperlink option.
+
+Alchemyst (github)
+ - Reported JSON error when using the --du option and unable to open a
+   directory.
+ - Reported that the reported total was incorrect when using the --du option.
+
+Ivan Ivanovich
+ - Reported small rounding error in human readable size output.
+
+Kenta Arai
+ - Reported Segfault with --filelimit option
+ - Add NULL guard for json_printinfo() and xml_printinfo() (and fix ftype
+   printing for XML)
+ - Fix getcharset() to not return a getenv() pointer.
+ - Suggest adding .gitignore file to the distribution.
+ - Clean up some warnings issued by -Wextra
+
+freemedom (github)
+ - Provided Makefile information for cross compiling for Android.
+
+David Seifert
+ - Provided updates for Makefile
+ - Suggested move to stdbool.h to avoid problems with newer compilers.
+
+Daniel Li / Landon Bourma
+ - Reported segfault from incorrect free.
+ 
 And many others whom I've failed to keep track of.  I should have started
 this list years ago.
 
-						- Steve Baker
-						  ice@mama.indstate.edu
+					- Steve Baker
+					  Steve.Baker.llc@gmail.com
+					  or
+					  oldmanprogrammer.llc@gmail.com

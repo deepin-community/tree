@@ -1,8 +1,119 @@
-tree (1.8.0-deepin1) unstable; urgency=medium
+tree (2.2.1-1) unstable; urgency=medium
 
-  * Rebuild
+  * [70f7a56] New upstream version 2.2.1
+  * [cac2952] d/patches/manpage: refresh for new upstream release
+  * [b359dc8] d/tests/clitest.md: adjust for new upstream release
 
- -- Deepin Packages Builder <packages@deepin.org>  Mon, 14 Nov 2022 17:49:12 +0800
+ -- Florian Ernst <florian@debian.org>  Tue, 26 Nov 2024 21:06:37 +0100
+
+tree (2.2.0-1) unstable; urgency=medium
+
+  * [8e8b77c] d/watch: http -> https
+  * [d68384d] New upstream version 2.2.0
+  * [0a78ae8] d/patches/manpage: refresh for new upstream release
+
+ -- Florian Ernst <florian@debian.org>  Mon, 25 Nov 2024 14:37:46 +0100
+
+tree (2.1.3-1) unstable; urgency=medium
+
+  * [72f04ce] New upstream version 2.1.3
+  * [c22aae1] Revert "d/tests/: temporarily disable fromfile test (to be
+    clarified with upstream)", as the new release addresses this
+  * [9d7d635] d/patches/: refresh for new upstream version
+
+ -- Florian Ernst <florian@debian.org>  Sat, 13 Jul 2024 14:51:48 +0200
+
+tree (2.1.2-1) unstable; urgency=medium
+
+  * [2b83084] New upstream version 2.1.2
+  * [67253e7] d/copyright: update year and upstream email address
+  * [ced472d] d/patches/, d/tests/: refresh for new upstream version
+  * [37e4716] d/tests/: temporarily disable fromfile test (to be clarified
+    with upstream)
+  * [1d0ac55] d/rules: override_dh_auto_clean to clean the resulting binary
+    (cf. e96ff99) (Closes: #1046930)
+  * [9fc2c0f] d/control: Standards-Version: 4.7.0 (no changes required)
+
+ -- Florian Ernst <florian@debian.org>  Thu, 04 Jul 2024 19:40:07 +0200
+
+tree (2.1.1-2) unstable; urgency=medium
+
+  * [41019d9] d/{control,copyright,watch}: update upstream homepage
+  * [c41b7e5] d/salsa-ci.yml: add to enable Salsa pipeline
+  * [4b41853] debian/tests/: add some autopkgtest using clitest
+
+ -- Florian Ernst <florian@debian.org>  Tue, 12 Dec 2023 17:06:39 +0100
+
+tree (2.1.1-1) unstable; urgency=medium
+
+  * [b6321d2] New upstream version 2.1.1
+  * [bb85e91] drop patches applied upstream and refresh remaining
+  * [d1974c3] debian/copyright: update years
+
+ -- Florian Ernst <florian@debian.org>  Mon, 26 Jun 2023 18:09:47 +0200
+
+tree (2.1.0-1) unstable; urgency=medium
+
+  * [1c70da4] New upstream version 2.1.0
+    - adds --hintro and --houtro options to replace the normal HTML intro and
+      outros with user defined ones (Closes: #865867, #939644)
+    - adds a --fflinks option recognizing symbolic links (Closes: #934520)
+    - fixes long option processing of --timefmt= (Closes: #1014621)
+    - Thanks to Steve Baker for explicitly fixing these!
+  * [8f7f775] upstream removed the (very outdated) French version of the
+    manpage
+  * [76f2c3e] debian/patches/speling: added to fix some upstream misspellings
+  * [e96ff99] debian/rules: update CFLAGS and drop override_dh_auto_clean
+  * [abdac86] debian/control: Remove unnecessary Build-Depends constraints
+  * [2ae5ffe] Standards-Version: 4.6.2 (no changes required)
+
+ -- Florian Ernst <florian@debian.org>  Thu, 29 Dec 2022 16:08:49 +0100
+
+tree (2.0.4-1) unstable; urgency=medium
+
+  * [97dab0a] New upstream version 2.0.4
+
+ -- Florian Ernst <florian@debian.org>  Sat, 10 Sep 2022 12:50:48 +0200
+
+tree (2.0.3-1) unstable; urgency=medium
+
+  * [728e13f] New upstream version 2.0.3
+  * [b54b81e] debian/copyright: redo in machine-readable format (DEP-5)
+  * [0a01f34] debian/patches/manpage: refresh, fixing a typo
+  * [fe36e7d] debian/control: declare RRR: no and Standards-Version: 4.6.1.0
+
+ -- Florian Ernst <florian@debian.org>  Sun, 28 Aug 2022 08:57:47 +0200
+
+tree (2.0.2-1) unstable; urgency=medium
+
+  * [36b56c4] New upstream version 2.0.2
+
+ -- Florian Ernst <florian@debian.org>  Thu, 17 Feb 2022 07:55:43 +0100
+
+tree (2.0.1-2) unstable; urgency=medium
+
+  * [98eb8c4] also install French manpage added in upstream's 2.0.0
+
+ -- Florian Ernst <florian@debian.org>  Sat, 08 Jan 2022 10:26:06 +0100
+
+tree (2.0.1-1) unstable; urgency=medium
+
+  * [990450f] New upstream version 2.0.0
+    - Properly sort --fromfile input (Chentao Credungtao via Debian)
+      (Closes: #942020)
+    - Make tree colorization use reset (rs code in dir_colors,) not normal
+      color when resetting attributes (Filips Romāns via Debian)
+      (Closes: #962581)
+  * [0474490] New upstream version 2.0.1
+  * [d190828] refresh patches
+  * [ec7cb69] debian/patches/PATH_MAX: dropped, superseded by upstream's 2.0.0
+  * [561d519] debian/rules: update to match upstream's Makefile
+  * [797e636] Bump debhelper from deprecated 9 to debhelper-compat (= 13) in B-D
+  * [a60db11] debian/watch: upgrade to recommended version
+  * [f6cee15] debian/copyright: update year
+  * [af67813] packaging now conforming with current Standards-Version 4.6.0.1
+
+ -- Florian Ernst <florian@debian.org>  Fri, 07 Jan 2022 16:58:29 +0100
 
 tree (1.8.0-1) unstable; urgency=medium
 
